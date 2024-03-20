@@ -173,6 +173,11 @@ public class Company {
      */
     public String findSellerOfTheYear(int year) 
     {
+        if(calculateSellsOfTheYear(year) == 0)
+        {
+            return "Ninguém";
+        }
+        
         HashMap<User,Integer> sellersCount = new HashMap();
         int max = 0;
         for(User seller : sellers)
