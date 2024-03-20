@@ -132,6 +132,23 @@ public class CompanyTest
         
         assertEquals(2, company.calculateSellsOfTheYear(2024));
     }
+    
+    @Test
+    public void findSellerOfTheYear()
+    {
+        company.registerClient(client1);
+        company.registerClient(client2);
+        company.registerSeller(seller1);
+        company.registerSeller(seller2);
+        company.registerProperty(property1);
+        company.registerProperty(property2);
+        company.createSell(client1, seller1, property1);
+        company.createSell(client1, seller2, property1);
+        company.createSell(client2, seller2, property2);   
+        
+        assertEquals(seller2.getName(), company.findSellerOfTheYear(2024));
+    }
+    
     /**
      * Construtor default para a classe de teste CompanyTest
      */

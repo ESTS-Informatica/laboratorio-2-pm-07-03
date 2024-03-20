@@ -174,6 +174,7 @@ public class Company {
     public String findSellerOfTheYear(int year) 
     {
         HashMap<User,Integer> sellersCount = new HashMap();
+        int max = 0;
         for(User seller : sellers)
         {
             sellersCount.put(seller, 0);
@@ -185,10 +186,27 @@ public class Company {
             {
                 if(seller == sell.getSeller() && sell.getDate().getYear() == year)
                 {
-                    sellersCount.put(seller,sellersCount.get(seller)++);
+                    sellersCount.put(seller,Integer.valueOf(sellersCount.get(seller).intValue() + 1));
                 }
             }
         }
+        
+        for(Integer sellerSells : sellersCount.values())
+        {
+            if(sellerSells >= max)
+            {
+                max = sellerSells;
+            }
+        }
+        
+        for(User seller : sellers)
+        {
+            if(sellersCount.get(seller) == max)
+            {
+                return seller.getName();
+            }
+        }
+        return null;
     }
 
 }
