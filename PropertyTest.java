@@ -21,6 +21,13 @@ public class PropertyTest
         assertEquals("T3 Monte Belo", property.getDescription());
     }
     
+    @Test
+    public void testToString()
+    {
+        Property property = new Property("T3 Monte Belo", 150000.0);
+        assertEquals("Descricao   : T3 Monte Belo\nPreco       : 150000.0 Euros",property.toString());
+    }
+    
     /**
      * Construtor default para a classe de teste PropertyTest
      */

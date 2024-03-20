@@ -38,8 +38,7 @@ public class Property {
      */
     public String getDescription() 
     {
-        return "T3 Monte Belo";
-
+        return description;
     }
 
     /**
@@ -56,7 +55,7 @@ public class Property {
      */
     public double getPrice() 
     {
-        return 150000.0;
+        return price;
     }
 
     /**
@@ -65,12 +64,12 @@ public class Property {
      * @param price The new price. Must not be negative.
      */
     public void setPrice(double price) {
-
+        
     }
 
     @Override
     public String toString() 
     {
-        return null;
+        return "Descricao   : " + description + "\nPreco       : " + price + " Euros";
     }
 }
