@@ -38,7 +38,7 @@ public class User {
      * @return This user id.
      */
     public String getId() {
-        return this.id;
+        return id;
     }
 
     /**
@@ -47,7 +47,7 @@ public class User {
      * @return This user name.
      */
     public String getName() {
-        return this.name;
+        return name;
     }
 
     /**
@@ -67,7 +67,7 @@ public class User {
      * @return This user phone.
      */
     public String getPhone() {
-        return this.phone;
+        return phone;
     }
 
     /**
