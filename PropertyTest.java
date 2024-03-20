@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
  * @version (um número da versão ou uma data)
  */
 public class PropertyTest
-{
+{    
     @Test
     public void testContructor()
     {

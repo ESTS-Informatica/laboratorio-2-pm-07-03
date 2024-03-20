@@ -103,7 +103,35 @@ public class CompanyTest
     {
         assertFalse(company.registerProperty(null));
     }
+    
+    @Test
+    public void testCreateSell()
+    {
+        company.registerClient(client1);
+        company.registerClient(client2);
+        company.registerSeller(seller1);
+        company.registerSeller(seller2);
+        company.registerProperty(property1);
+        company.registerProperty(property2);
 
+        assertTrue(company.createSell(client1, seller1, property1));
+        assertTrue(company.createSell(client2, seller2, property2));        
+    }
+
+    @Test
+    public void testCalculateSellsOfTheYear()
+    {
+        company.registerClient(client1);
+        company.registerClient(client2);
+        company.registerSeller(seller1);
+        company.registerSeller(seller2);
+        company.registerProperty(property1);
+        company.registerProperty(property2);
+        company.createSell(client1, seller1, property1);
+        company.createSell(client2, seller2, property2);   
+        
+        assertEquals(2, company.calculateSellsOfTheYear(2024));
+    }
     /**
      * Construtor default para a classe de teste CompanyTest
      */
